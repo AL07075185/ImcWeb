@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Activa CDI para la aplicación. GlassFish 8 inicializa componentes de Jakarta EE
+    que requieren CDI; sin este archivo el despliegue falla con
+    "IllegalStateException: CDI is not available" (ver Actividad 4).
+-->
+<beans xmlns="https://jakarta.ee/xml/ns/jakartaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_4_1.xsd"
+       version="4.1"
+       bean-discovery-mode="all">
+</beans>

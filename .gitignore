@@ -1,24 +1,26 @@
-# Scripts locales
-*.sh
-# Maven / NetBeans / IDEs
+# Maven
 target/
+
+# NetBeans
 nbproject/private/
 nbactions.xml
 nb-configuration.xml
-build/
-dist/
+
+# Otros IDE
 .idea/
 *.iml
 .vscode/
+.settings/
 .classpath
 .project
-.settings/
-# Java
+
+# Compilados y registros
 *.class
 *.log
-hs_err_pid*
-# Sistema operativo y temporales de Office
+
+# Sistema operativo
 .DS_Store
 Thumbs.db
-~$*
-*.tmp
+
+# Scripts locales
+*.sh

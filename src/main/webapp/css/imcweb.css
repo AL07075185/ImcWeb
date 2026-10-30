@@ -1,0 +1,52 @@
+/* Estilos propios de ImcWeb sobre Bootstrap 5.3.8 (prototipo de Figma). */
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* Barra de navegación: enlaces blancos sobre el azul primario */
+.barra-principal {
+    min-height: 64px;
+}
+.barra-principal .nav-link {
+    color: #fff;
+    font-weight: 500;
+}
+.barra-principal .nav-link:hover,
+.barra-principal .nav-link.active {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Tarjetas de formularios y resultados */
+.tarjeta {
+    border-color: #dee2e6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+}
+
+/* Valor grande del IMC actual */
+.imc-valor {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.datos-actual dt,
+.datos-actual dd {
+    margin-bottom: .6rem;
+}
+
+/* Número grande de la página de error */
+.codigo-error {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Insignias de clasificación (idClasificacion de la tabla clasificacionImc) */
+.imc-1 { background-color: #0dcaf0; color: #052c65; }  /* Bajo peso */
+.imc-2 { background-color: #198754; color: #fff; }     /* Peso normal */
+.imc-3 { background-color: #ffc107; color: #212529; }  /* Sobrepeso */
+.imc-4 { background-color: #fd7e14; color: #fff; }     /* Obesidad grado I */
+.imc-5 { background-color: #dc3545; color: #fff; }     /* Obesidad grado II */
+.imc-6 { background-color: #842029; color: #fff; }     /* Obesidad grado III */
