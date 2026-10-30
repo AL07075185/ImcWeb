@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Contexto raíz de ImcWeb. Lo carga ContextLoaderListener (web.xml).
+    Contiene la fuente de datos y las capas Service y Repository del modelo.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Datos de conexión de respaldo (src/main/resources/bd.properties) -->
+    <context:property-placeholder location="classpath:bd.properties"/>
+
+    <!-- Fuente de datos: primero busca el pool de GlassFish publicado como
+         jdbc/imcDb (JNDI); si no existe, usa una conexión directa con bd.properties. -->
+    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="${bd.jndi}"/>
+        <property name="resourceRef" value="true"/>
+        <property name="expectedType" value="javax.sql.DataSource"/>
+        <property name="defaultObject">
+            <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="${bd.driver}"/>
+                <property name="url" value="${bd.url}"/>
+                <property name="username" value="${bd.usuario}"/>
+                <property name="password" value="${bd.contrasena}"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Registra @Service, @Repository y @Component del modelo -->
+    <context:component-scan base-package="mx.webapp.imc.modelo"/>
+</beans>
